@@ -9,17 +9,22 @@
 <body>
     
 <form action="<?php echo $_REQUEST['PHP']?>" method="post">
-        <p>Numero 1<input type="text" name="a"></p>
-        <p>Numero 2<input type="text" name="b"></p>
-        <p>Numero 3<input type="text" name="c"></p>
+        <p>Numero: <input type="text" name="n"></p>
         <input type="submit" value="enviar">
 </form>
     <?php
-       $numeros = array ($_REQUEST["a"],$_REQUEST["b"],$_REQUEST["c"]);
-       sort($numeros);
-       foreach($numeros as $numero){ 
-       echo"$numero,";
-    }
+       $numero = ($_REQUEST['n']);
+            if(fmod($numero,2)==0){
+                echo 'es par ';
+            }else{
+                echo 'es impar ';
+            }
+            if(fmod($numero,5)==0){
+                echo 'es divisible entre 5 ';
+            }else{
+                echo 'no es divisible entre 5 ';
+            }
+    
     ?>
 </body>
 </html>
