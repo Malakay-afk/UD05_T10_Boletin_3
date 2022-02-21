@@ -7,19 +7,21 @@
     <title>boletín 3 - exercicio 11</title>
 </head>
 <body>   
-<form action="<?php echo $_REQUEST['PHP']?>" method="post">
+<form action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
         <p>Escribe la hora: <input type="text" name="n"></p>
-        <p>Escribe la hora: <input type="text" name="m"></p>
+        <p>Escribe minuto: <input type="text" name="m"></p>
         <input type="submit" value="enviar">
 
 </form>
+
     <?php
-          $numero = ($_REQUEST['n']* 60 * 60)+($_REQUEST('m') * 60);
-          $segundosDia = (24 * 60 * 60);
-      
-        $resultado = ($numero - $segundosDia);
+          $numero = ($_REQUEST['n'] * 60 * 60) + ($_REQUEST['m'] * 60);
+    
+          $resultado = 86400 - $numero;
         
-    echo 'quedan $resultado segundos para llegar a medianoche'
+    echo "quedan $resultado segundos para llegar a medianoche";
+
     ?>
+
 </body>
 </html>
